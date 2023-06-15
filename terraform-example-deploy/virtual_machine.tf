@@ -34,10 +34,10 @@ resource "tls_private_key" "main" {
 }
 
 resource "azurerm_linux_virtual_machine" "example" {
-  name                = "example-machine"
+  name                = "example-machine-pr"
   resource_group_name = data.azurerm_resource_group.example.name
   location            = data.azurerm_resource_group.example.location
-  size                = "Standard_F2"
+  size                = "Standard_F1"
   admin_username      = "adminuser"
   network_interface_ids = [
     azurerm_network_interface.example.id,
